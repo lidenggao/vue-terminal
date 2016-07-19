@@ -46,6 +46,7 @@ Vue.component('console-panel', {
           fontSize: 14,
           background: 'none',
           padding: 0,
+          paddingLeft:55,
           margin:0,
           border:0,
           color:'inherit'
