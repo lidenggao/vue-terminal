@@ -1,13 +1,22 @@
 /*
 控制台面板
-<div console-panel name="message"></div>
-示例：$scope.$broadcast 'console:message', '11111111111'
+<console-panel name="message"></console-panel> 
+示例：
+```js
+var demo = new Vue({
+  el: '#demo',
+});
+setInterval(function(){
+ demo.$broadcast('console:message','123123');
+},2000);
+```
  */
 Vue.component('console-panel', {
     template: '<div></div>',
     props: ['name', 'value'],
     ready: function(){
       var addData, name, row_number;
+      var element = this.$el;
       $(element).css({
         height: '100%',
         overflow: 'auto',
