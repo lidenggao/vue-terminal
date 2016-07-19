@@ -43,13 +43,11 @@ Vue.component('console-panel', {
         }
         log.appendTo(element);
         pre = $("<pre></pre>").css({
-          paddingLeft: 55,
           fontSize: 14,
           background: 'none',
           padding: 0,
           margin:0,
           border:0,
-          font-size: 'inherit',
           color:'inherit'
         }).html(data).appendTo(log);
         $("<p>" + row_number + "</p>").css({
