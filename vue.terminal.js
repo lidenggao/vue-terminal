@@ -20,7 +20,8 @@ Vue.component('console-panel', {
       $(element).css({
         height: '100%',
         overflow: 'auto',
-        background: '#101010'
+        background: '#101010',
+        color:'#999'
       });
       row_number = 0;
       addData = function(data) {
@@ -43,13 +44,15 @@ Vue.component('console-panel', {
         }
         log.appendTo(element);
         pre = $("<pre></pre>").css({
-          fontSize: 14,
-          background: 'none',
-          padding: 0,
-          paddingLeft:55,
-          margin:0,
-          border:0,
-          color:'inherit'
+            fontSize: 14,
+            background: 'none',
+            padding: 0,
+            paddingLeft:55,
+            margin:0,
+            border:0,
+            color:'inherit',
+            overflow: 'hidden',
+            whiteSpace: 'pre-wrap'
         }).html(data).appendTo(log);
         $("<p>" + row_number + "</p>").css({
           position: "absolute",
