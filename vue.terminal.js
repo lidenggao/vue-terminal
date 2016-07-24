@@ -200,7 +200,7 @@ Vue.component('console-panel', {
         color:'#999'
       }).click(function(){
         is_inel = true;
-      }).mouseleaver(function(){
+      }).bind('mouseleaver', function(){
         is_inel = false;
       });
       row_number = 0;
