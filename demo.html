@@ -3,20 +3,29 @@
 	<head>
 		<meta charset="utf-8">
 		<title>仿真终端模拟器</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/vue/1.0.28/vue.min.js"></script>
     <script src="./vue.terminal.js"></script>
+    <style type="text/css">
+      *{padding:0;margin: 0}
+    </style>
 	</head>
 	<body ng-strict-di>
-		<div id="demo>
-      <console-panel name="message"></console-panel> 
+		<div id="demo">
+      <console-panel name="message" style="height:500px"></console-panel> 
     </div>
     
     <script>
+    var demo_data = ["[18:35:18] ","[31mFailed to load external module[39m [35m@babel/register[39m\n[18:35:18] Requiring external module [35mbabel-register[39m\n","[18:35:19] Using gulpfile [35mE:\\htdocs\\zaijinsuo\\alphabond\\gulpfile.babel.js[39m\n","[18:35:19] ","Starting '[36mvendor[39m'...\n","[18:35:28] ","Finished '[36mvendor[39m' after [35m9.33 s[39m\n[18:35:28] Starting '[36mbuild:dev[39m'...\n[18:35:28] Starting '[36mindex[39m'...\n","[18:35:28] ","Starting '[36mimages[39m'...\n","[18:35:28] ","Starting '[36mscripts-min[39m'...\n","[18:35:28] ","Starting '[36mstyles-min[39m'...\n","[18:35:28] ","Starting '[36mtemplates[39m'...\n","[18:35:28] Finished '[36mbuild:dev[39m' after [35m24 ms[39m\n","${serverIp} http://11.177.15.104/\n","${easemobAppKey} lz0817#javatest\n${officialnUrl} http://11.177.15.104/official_ebsite/\n${wapUrl} http://11.177.15.104:10490/\n","[18:35:29] ","Finished '[36mindex[39m' after [35m584 ms[39m\n","[18:35:52] ","Finished '[36mscripts-min[39m' after [35m24 s[39m\n","[18:35:54] ","Finished '[36mstyles-min[39m' after [35m26 s[39m\n","[18:35:54] ","Finished '[36mtemplates[39m' after [35m26 s[39m\n","[18:35:55] ","Finished '[36mimages[39m' after [35m27 s[39m\n"];
+
+
     var demo = new Vue({
       el: '#demo',
     });
+    var i=0;
     setInterval(function(){
-     demo.$broadcast('console:message','123123');
+     demo.$broadcast('console:message',demo_data[i]);
+     (i<demo_data.length)?i++:0;
     },2000);
     </script>
 	</body>
