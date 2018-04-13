@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>仿真终端模拟器</title>
+    <script src="./vue.terminal.js"></script>
+	</head>
+	<body ng-strict-di>
+		<div id="demo>
+      <console-panel name="message"></console-panel> 
+    </div>
+    
+    <script>
+    var demo = new Vue({
+      el: '#demo',
+    });
+    setInterval(function(){
+     demo.$broadcast('console:message','123123');
+    },2000);
+    </script>
+	</body>
+</html>
